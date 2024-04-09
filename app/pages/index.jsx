@@ -286,6 +286,8 @@ export default class PreviewPage extends React.Component {
         if (refreshContent) {
           try {
             // eslint-disable-next-line
+            mermaid.registerExternalDiagrams([globalThis["mermaid-zenuml"]])
+            // eslint-disable-next-line
             mermaid.initialize({ theme: (this.state.theme || 'light'), ...(options.maid || {}) })
             // eslint-disable-next-line
             mermaid.init(undefined, document.querySelectorAll('.mermaid'))
@@ -342,6 +344,7 @@ export default class PreviewPage extends React.Component {
           <script type="text/javascript" src="/_static/snap.svg.min.js"></script>
           <script type="text/javascript" src="/_static/tweenlite.min.js"></script>
           <script type="text/javascript" src="/_static/mermaid.min.js"></script>
+          <script type="text/javascript" src="/_static/mermaid-zenuml.min.js"></script>
           <script type="text/javascript" src="/_static/sequence-diagram-min.js"></script>
           <script type="text/javascript" src="/_static/katex@0.15.3.js"></script>
           <script type="text/javascript" src="/_static/mhchem.min.js"></script>
